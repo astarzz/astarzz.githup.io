@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>前端国际化</title>
+      <link href="/2019/02/19/six/"/>
+      <url>/2019/02/19/six/</url>
+      
+        <content type="html"><![CDATA[<p>公司需要开拓一个国外市场，很是看重，就给我们项目组提了些功能需求。其中就包括国际化问题，双语切换是一个很重要的竞标资本。<br>国际化相关技术并不复杂，但涉及的点还是比较多的，前后端、数据、硬编码等等，作业量也不小。<br>这篇文章仅先展示下目前这个项目前端国际化的细节。</p><a id="more"></a>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> i18n </tag>
+            
+            <tag> js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>当幸福来敲门</title>
       <link href="/2018/12/10/five/"/>
       <url>/2018/12/10/five/</url>
