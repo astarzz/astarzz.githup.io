@@ -8,7 +8,7 @@
       <link href="/2019/02/19/six/"/>
       <url>/2019/02/19/six/</url>
       
-        <content type="html"><![CDATA[<p>公司需要开拓一个国外市场，很是看重，就给我们项目组提了些功能需求(包装美化)。其中就包括国际化问题，多语言切换是一个很重要的竞标资本。<br>国际化相关技术并不复杂，但涉及的点还是比较多的，前后端、数据、硬编码等等，作业量也不小。<br>这篇文章仅先探讨下前端国际化的细节。</p><a id="more"></a><p>#i18n<br>i18n全称internationalization，是国际化的简称，因单词过长，而i和n之间有18个字符故缩写为i18n。<br>#工具<br>js的国际化采用的市面上比较流行的jquery.i18n插件，轻量级，使用方法简单。<br>配置不同的语言(en、zh_CN等)的properties，每个文件一一对应相同的key(key不能重复)，value则是不同语言的释义。<br>简单的讲，就是获得切换语言的指令，在显示调用’key’的位置，置换成指定语言的value。<br>#配置文件<br>因为只是目前只是竞标阶段，所以暂时考虑中、英两种语言。<br><img src="/2019/02/19/six/i18n-web-1.png" alt="littleCoder"><br>文件路径可自行定义<br>其中common.properties,可作为组件级或常用、通用的配置<br><img src="/2019/02/19/six/i18n-web-2.png" alt="littleCoder"></p>]]></content>
+        <content type="html"><![CDATA[<p>公司需要开拓一个国外市场，很是看重，就给我们项目组提了些功能需求(包装美化)。其中就包括国际化问题，多语言切换是一个很重要的竞标资本。<br>国际化相关技术并不复杂，但涉及的点还是比较多的，前后端、数据、硬编码等等，作业量也不小。<br>这篇文章仅先探讨下前端国际化的细节。</p><a id="more"></a><h2 id="i18n"><a href="#i18n" class="headerlink" title="i18n"></a>i18n</h2><p>i18n全称internationalization，是国际化的简称，因单词过长，而i和n之间有18个字符故缩写为i18n。</p><h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>js的国际化采用的市面上比较流行的jquery.i18n插件，轻量级，使用方法简单。<br>配置不同的语言(en、zh_CN等)的properties，每个文件一一对应相同的key(key不能重复)，value则是不同语言的释义。<br>简单的讲，就是获得切换语言的指令，在显示调用’key’的位置，置换成指定语言的value。</p><h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p>因为只是目前只是竞标阶段，所以暂时考虑中、英两种语言。<br><img src="/2019/02/19/six/i18n-web-1.png" alt="littleCoder"><br>文件路径可自行定义<br>其中common.properties,可作为组件级或常用、通用的配置<br><img src="/2019/02/19/six/i18n-web-2.png" alt="littleCoder"></p>]]></content>
       
       
       <categories>
