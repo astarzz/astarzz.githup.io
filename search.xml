@@ -8,7 +8,7 @@
       <link href="/2020/03/05/ten/"/>
       <url>/2020/03/05/ten/</url>
       
-        <content type="html"><![CDATA[<p><strong>npm</strong><br>Node Package Manager，是nodejs的包管理器，用于node插件管理。<br><strong>cnpm</strong><br>是淘宝团队提供的免费国内npm下载镜像。</p><a id="more"></a><p>npm同maven类似，默认的仓库地址在国外(<a href="https://registry.npmjs.org" target="_blank" rel="noopener">https://registry.npmjs.org</a>)，因网络问题经常性的出现下载慢、出错等问题。<br>如果使用国内镜像，就可以很好的避免问题，目前有2中方式可以实现。</p><ul><li>安装cnpm</li></ul><blockquote><p>npm install cnpm -g –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></p></blockquote><p>后续需要使用cnpm命令来安装模块</p><blockquote><p>cnpm install hexo</p></blockquote><ul><li>修改默认仓库地址</li></ul><blockquote><p>npm config set registry <a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></p></blockquote>]]></content>
+        <content type="html"><![CDATA[<p>##npm<br>Node Package Manager，是nodejs的包管理器，用于node插件管理。</p><p>##cnpm<br>是淘宝团队提供的免费国内npm下载镜像。</p><a id="more"></a><p>npm同maven类似，默认的仓库地址在国外(<a href="https://registry.npmjs.org" target="_blank" rel="noopener">https://registry.npmjs.org</a>)，因网络问题经常性的出现下载慢、出错等问题。<br>如果使用国内镜像，就可以很好的避免问题，目前有2中方式可以实现。</p><ul><li>安装cnpm</li></ul><blockquote><p>npm install cnpm -g –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></p></blockquote><p>后续需要使用cnpm命令来安装模块</p><blockquote><p>cnpm install hexo</p></blockquote><ul><li>修改默认仓库地址</li></ul><blockquote><p>npm config set registry <a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></p></blockquote>]]></content>
       
       
       <categories>
