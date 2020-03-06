@@ -27,15 +27,21 @@
 <h3 id="数据库序列"><a href="#数据库序列" class="headerlink" title="数据库序列"></a>数据库序列</h3><p>数据库序列是一个最简单的处理方案，利用其自身机制实现全库唯一.<br>最常用的就是oracle的sequence，保证ID的唯一且递增。<br>优点</p>
 <ol>
 <li>简单方便，一行代码的事</li>
-<li>数字类型，直观并可进行排序<br>缺点</li>
+<li>数字类型，直观并可进行排序</li>
+</ol>
+<p>缺点</p>
+<ol>
 <li>性能容易瓶颈，不易扩展</li>
 <li>太依赖数据库，无法做多源数据兼容</li>
 </ol>
-<h3 id="redis"><a href="#redis" class="headerlink" title="redis"></a>redis</h3><p>redis是一个高性能的内存数据库，并且它是单线程的，所有的命令都是原子性操作，所以可以利用这个特性保证ID在高并发性唯一。<br>redis有2个数值递增命令INCR和INCRBY，INCR是每次递增1，INCRBY可加步长参数。</p>
+<h3 id="redis"><a href="#redis" class="headerlink" title="redis"></a>redis</h3><p>redis是一个高性能的内存数据库，并且它是单线程的，所有的命令都是原子性操作，所以可以利用这个特性保证ID在高并发性唯一。<br>redis有2个数值递增命令INCR和INCRBY，INCR是每次递增1，INCRBY可加步长参数。<br>优点</p>
 <ol>
 <li>高性能，能从容应对高并发</li>
 <li>不再依赖于特定数据库</li>
-<li>数字类型，直观并可进行排序<br>缺点</li>
+<li>数字类型，直观并可进行排序</li>
+</ol>
+<p>缺点</p>
+<ol>
 <li>引入新组件，依赖其高可用</li>
 </ol>
 <h3 id="zookeeper"><a href="#zookeeper" class="headerlink" title="zookeeper"></a>zookeeper</h3><p>得益于zk提供的数据强一致性，通过其临时有序节点实现的分布式锁，可以保证在高并发下全局唯一ID。<br>但是既然是锁，性能上肯定是有一定损耗。这里可以利用步长，减少锁的使用。<br>比如每次获取锁，获取序列值，加上程序里计算好的待入库数据量，回写zk。然后在程序里利用这个区间段，生成每条数据的ID。</p>
@@ -43,8 +49,9 @@
 <ol>
 <li>高性能，每秒可生成400万个ID</li>
 <li>纯算法，不依赖数据库、第三方组件</li>
-<li>数字类型，直观并可进行排序<br>缺点<br>没有太明显的缺点，如果硬要要说可能就是代码相对复杂些，且没有像其他第三方组件那样的成熟的唯一性保证，需要自身多测试验证。</li>
+<li>数字类型，直观并可进行排序</li>
 </ol>
+<p>缺点<br>没有太明显的缺点，如果硬要要说可能就是代码相对复杂些，且没有像其他第三方组件那样的成熟的唯一性保证，需要自身多测试验证。</p>
 </div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined" target="_blank" rel="noopener">astar</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="/http:/yourwebsite.com/2019/09/15/12/">http://yourwebsite.com/2019/09/15/12/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://yourwebsite.com">astar's Blog</a>！</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/zookeeper/">zookeeper</a><a class="post-meta__tags" href="/tags/snowflake/">snowflake</a></div><nav id="pagination"><div class="next-post pull-right"><a href="/2019/08/09/11/"><span>初识docker</span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer class="footer-bg" style="background-image: url(/images/blog-bg.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2013 - 2020 By astar</div><div class="framework-info"><span>驱动 - </span><a href="http://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody" target="_blank" rel="noopener"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.6.1"></script><script src="/js/fancybox.js?version=1.6.1"></script><script src="/js/sidebar.js?version=1.6.1"></script><script src="/js/copy.js?version=1.6.1"></script><script src="/js/fireworks.js?version=1.6.1"></script><script src="/js/transition.js?version=1.6.1"></script><script src="/js/scroll.js?version=1.6.1"></script><script src="/js/head.js?version=1.6.1"></script><script src="/js/search/local-search.js"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
   $('#nav').addClass('is-mobile')
   $('footer').addClass('is-mobile')
