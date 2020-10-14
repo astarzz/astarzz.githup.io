@@ -14,7 +14,7 @@
 
 <h2 id="rowkey反转"><a href="#rowkey反转" class="headerlink" title="rowkey反转"></a>rowkey反转</h2><p>rowkey反转是解决region热点的一个简单粗暴的方式，我之前的项目中就是采用这样一个方案。</p>
 <p>比如一堆连续的userID，1008610001 ~ 1008612315的数据，通过反转，得到1000168001、2000168001、3000168001…5132168001这样分散的数据，按照region分区排序，连续的数据很难分到同一个region当中，这也就实现了rowkey的均匀分布。</p>
-<h2 id="拆分"><a href="#拆分" class="headerlink" title="拆分"></a>拆分</h2><p>region的分区的拆分分为三种方式：</p>
+<h2 id="拆分"><a href="#拆分" class="headerlink" title="拆分"></a>拆分</h2><p>region的分区拆分分为三种方式：</p>
 <ul>
 <li>自动拆分</li>
 </ul>
