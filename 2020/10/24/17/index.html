@@ -17,7 +17,7 @@
 <h3 id="cookie-session"><a href="#cookie-session" class="headerlink" title="cookie-session"></a>cookie-session</h3><p>因为http协议的无状态性，有了传统cookie-session的方案：用户访问应用，服务端创建会话session，并下放sessionId到浏览器cookie中，用户后续请求都会携带sessionId，以此证明<strong>谁是谁</strong>。<br>这种方案有几个比较严重的弊端:</p>
 <ul>
 <li>空间<br>因为服务器需要维护用户session，所以需要申请更多的资源，一旦用户量过大，它本身也很难做到水平扩展，服务器压力激增会有风险。</li>
-<li>共享<br>现在的绝大多数应用很难说有还单节点部署，基本都在做集群、分布式。一个用户的session如果只在一个节点应用上存在，访问其他节点服务，就无法证明’用户是谁’，这里就涉及到session的同步、共享问题。当然，目前也有比较成熟的外部存储方案，如spring-redis-session。</li>
+<li>共享<br>现在的绝大多数应用很少再单节点部署，基本都在做集群、分布式。一个用户的session如果只在一个节点应用上存在，访问其他节点服务，就无法证明’用户是谁’，这里就涉及到session的同步、共享问题。当然，目前也有比较成熟的外部存储方案，如spring-redis-session。</li>
 <li>跨域<br>浏览器有同源策略，保护用户信息安全，cookie只有在相同协议，相同域名，相同端口的服务上传递访问。</li>
 </ul>
 <p>JWT的出现就很好的解决的了传统cookie-session的这些问题。</p>
